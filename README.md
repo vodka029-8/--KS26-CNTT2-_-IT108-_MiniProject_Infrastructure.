@@ -7,8 +7,6 @@ Module 1: Thiết lập "Căn cứ số" (Terminal)
 Sử dụng câu lệnh PowerShell tối ưu hóa với kỹ thuật mảng lồng nhau để tạo toàn bộ cấu trúc cây thư mục:
 powershell
 New-Item -ItemType Directory -Path ( "docs", "scripts", "data", "backup" | ForEach-Object { "greentech-system/$_" } )
-Hãy thận trọng khi sử dụng mã.
-
 2. Thao tác với đường dẫn tương đối (Relative Path) và tạo file cấu hình ẩn .env
 
 Di chuyển vào thư mục gốc bằng đường dẫn tương đối và tạo tệp cấu hình ẩn bảo mật chứa thông tin giả định:
@@ -17,8 +15,6 @@ cd greentech-system
 New-Item -ItemType File -Name ".env" -Value "DB_PASSWORD=GreenTechSecure2026`nAPI_KEY=IoT_Sensor_Farm_Secret"
 # Thiết lập thuộc tính ẩn (Hidden) cho file .env trên môi trường Windows
 (Get-Item ".env").Attributes = 'Hidden'
-Hãy thận trọng khi sử dụng mã.
-
 Module 2: Robot lọc Log tự động (Advanced Scripting)
 
 Tạo tệp văn bản đặt tên là auto_report.bat nằm trong thư mục scripts/. Thao tác xử lý dữ liệu lớn qua bộ lọc đường ống Pipe (|) giúp hệ thống truyền thẳng luồng ký tự sang bộ nhớ đệm, không nạp toàn bộ file 500MB vào RAM để tránh tràn bộ nhớ.
@@ -55,8 +51,6 @@ echo =================================================== >> "%REPORT_FILE%"
 echo [SUCCESS] Bao cao da duoc xuat vao thu muc backup/bao-cao-su-co.txt
 echo ===================================================
 pause
-Hãy thận trọng khi sử dụng mã.
-
 Module 3: Tài liệu hướng dẫn vận hành (Markdown & Word)
 
 
@@ -89,8 +83,6 @@ markdown
 | :--- | :--- | :--- | :--- |
 | Gateway Center | 16 GB | 1.500.000 VND | SSD |
 | Edge Sensor Node | 4 GB | 450.000 VND | HDD |
-Hãy thận trọng khi sử dụng mã.
-
 2. Quy chuẩn xây dựng Đặc tả hệ thống srs-he-thong.docx
 
 • Cấu trúc Styles: Áp dụng trực tiếp thanh công cụ Word Styles. Gán nhãn thuộc tính Heading 1 cho các mục lớn (1. Mục tiêu, 2. Mô tả bài toán), Heading 2 cho phân mục con (A. Kiến trúc lưu trữ, B. Database Thiết kế) và Heading 3 cho các module chức năng.
@@ -104,7 +96,6 @@ Module 4: Đối soát tài nguyên (Excel Database Mindset)
 Bạn nhập công thức chuẩn xác sau vào ô tính ten_thiet_bi:
 excel
 =VLOOKUP(TRIM(B2), 'danh-muc-linh-kien'!$A$2:$D$101, 2, FALSE)
-Hãy thận trọng khi sử dụng mã.
 • Giải nghĩa cơ chế hoạt động: Hàm TRIM(B2) đóng vai trò như một bộ lọc làm sạch dữ liệu đầu vào, tự động cắt bỏ mọi ký tự khoảng trắng thừa ở hai đầu mã linh kiện. Việc cố định vùng tham chiếu bằng ký tự $ ($A$2:$D$101) đảm bảo khi bạn kéo AutoFill công thức xuống 100 dòng, tọa độ danh mục linh kiện không bị chạy lệch pha dữ liệu.
 
 Phân tích Khoa học thông tin & Bẫy Hardware
